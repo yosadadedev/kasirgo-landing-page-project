@@ -1,46 +1,68 @@
+import { Apple, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 
 export const CTASection = () => {
   return (
-    <section className="py-20 md:py-28 bg-background relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 gradient-primary opacity-95" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_transparent_0%,_hsl(var(--primary)/0.3)_100%)]" />
-      </div>
+    <section className="py-20 md:py-28 relative overflow-hidden">
+      {/* Purple Gradient Background */}
+      <div className="absolute inset-0 gradient-primary" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_transparent_0%,_hsl(var(--primary)/0.5)_100%)]" />
+      
+      {/* Decorative circles */}
+      <div className="absolute top-10 left-10 w-32 h-32 border border-primary-foreground/10 rounded-full" />
+      <div className="absolute bottom-10 right-10 w-48 h-48 border border-primary-foreground/10 rounded-full" />
+      <div className="absolute top-1/2 left-1/4 w-24 h-24 border border-primary-foreground/5 rounded-full" />
 
       <div className="container mx-auto relative z-10">
         <div className="text-center max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-primary-foreground mb-6">
-            Siap Mengembangkan Bisnis Anda?
+            Download KasirGo &<br />
+            Kelola Bisnis Anda
           </h2>
-          <p className="text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
-            Bergabung dengan ribuan pengusaha Indonesia yang sudah merasakan
-            kemudahan KasirGo. Mulai gratis sekarang!
+          <p className="text-lg text-primary-foreground/80 mb-10 max-w-xl mx-auto">
+            Download di App Store atau Google Play. Scan kode QR atau klik tombol di bawah.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="xl"
-              className="bg-background text-primary hover:bg-background/90 shadow-elevated"
-            >
-              Download Sekarang
-              <ArrowRight className="ml-1" size={20} />
-            </Button>
-            <Button
-              variant="outline"
-              size="xl"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:border-primary-foreground"
-            >
-              Hubungi Tim Sales
-            </Button>
+          {/* App Store Buttons & QR Code */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            {/* App Store Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button className="bg-foreground text-background hover:bg-foreground/90 h-14 px-6 rounded-xl gap-3">
+                <Apple className="w-6 h-6" />
+                <div className="text-left">
+                  <p className="text-[10px] opacity-80">Download on the</p>
+                  <p className="text-sm font-semibold -mt-0.5">App Store</p>
+                </div>
+              </Button>
+              <Button className="bg-foreground text-background hover:bg-foreground/90 h-14 px-6 rounded-xl gap-3">
+                <Play className="w-6 h-6 fill-current" />
+                <div className="text-left">
+                  <p className="text-[10px] opacity-80">Get it on</p>
+                  <p className="text-sm font-semibold -mt-0.5">Google Play</p>
+                </div>
+              </Button>
+            </div>
+
+            {/* QR Code */}
+            <div className="hidden md:flex flex-col items-center">
+              <div className="bg-primary-foreground p-3 rounded-xl shadow-elevated">
+                <div className="w-24 h-24 bg-foreground rounded-lg flex items-center justify-center">
+                  {/* QR Code placeholder */}
+                  <div className="grid grid-cols-5 gap-0.5">
+                    {Array.from({ length: 25 }).map((_, i) => (
+                      <div
+                        key={i}
+                        className={`w-3 h-3 ${
+                          Math.random() > 0.4 ? "bg-primary-foreground" : "bg-transparent"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <p className="text-xs text-primary-foreground/60 mt-2">Scan QR Code</p>
+            </div>
           </div>
-
-          {/* Trust badge */}
-          <p className="mt-8 text-primary-foreground/60 text-sm">
-            ✓ Gratis selamanya untuk fitur dasar &nbsp;&nbsp; ✓ Tanpa kartu kredit &nbsp;&nbsp; ✓ Setup 2 menit
-          </p>
         </div>
       </div>
     </section>
