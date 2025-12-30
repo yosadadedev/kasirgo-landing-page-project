@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Apple, Play } from "lucide-react";
+import { Play } from "lucide-react";
+
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.yl.kasirgo";
 
 export const HeroSection = () => {
   return (
@@ -31,22 +33,17 @@ export const HeroSection = () => {
             KasirGo membantu Anda mengelola penjualan, stok barang, dan laporan keuangan — semua dalam satu aplikasi mudah.
           </p>
 
-          {/* App Store Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up stagger-3">
-            <Button className="bg-foreground text-background hover:bg-foreground/90 h-14 px-6 rounded-xl gap-3">
-              <Apple className="w-6 h-6" />
-              <div className="text-left">
-                <p className="text-[10px] opacity-80">Download on the</p>
-                <p className="text-sm font-semibold -mt-0.5">App Store</p>
-              </div>
-            </Button>
-            <Button className="bg-foreground text-background hover:bg-foreground/90 h-14 px-6 rounded-xl gap-3">
-              <Play className="w-6 h-6 fill-current" />
-              <div className="text-left">
-                <p className="text-[10px] opacity-80">Get it on</p>
-                <p className="text-sm font-semibold -mt-0.5">Google Play</p>
-              </div>
-            </Button>
+          {/* Play Store Button */}
+          <div className="flex justify-center animate-fade-up stagger-3">
+            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer">
+              <Button className="bg-foreground text-background hover:bg-foreground/90 h-14 px-8 rounded-xl gap-3">
+                <Play className="w-6 h-6 fill-current" />
+                <div className="text-left">
+                  <p className="text-[10px] opacity-80">Download di</p>
+                  <p className="text-sm font-semibold -mt-0.5">Google Play</p>
+                </div>
+              </Button>
+            </a>
           </div>
         </div>
 

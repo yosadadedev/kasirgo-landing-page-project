@@ -1,5 +1,7 @@
-import { Apple, Play } from "lucide-react";
+import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.yl.kasirgo";
 
 export const CTASection = () => {
   return (
@@ -20,28 +22,21 @@ export const CTASection = () => {
             Kelola Bisnis Anda
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-10 max-w-xl mx-auto">
-            Download di App Store atau Google Play. Scan kode QR atau klik tombol di bawah.
+            Tersedia gratis di Google Play Store. Scan kode QR atau klik tombol di bawah.
           </p>
 
-          {/* App Store Buttons & QR Code */}
+          {/* Play Store Button & QR Code */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            {/* App Store Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-foreground text-background hover:bg-foreground/90 h-14 px-6 rounded-xl gap-3">
-                <Apple className="w-6 h-6" />
-                <div className="text-left">
-                  <p className="text-[10px] opacity-80">Download on the</p>
-                  <p className="text-sm font-semibold -mt-0.5">App Store</p>
-                </div>
-              </Button>
-              <Button className="bg-foreground text-background hover:bg-foreground/90 h-14 px-6 rounded-xl gap-3">
+            {/* Play Store Button */}
+            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer">
+              <Button className="bg-foreground text-background hover:bg-foreground/90 h-14 px-8 rounded-xl gap-3">
                 <Play className="w-6 h-6 fill-current" />
                 <div className="text-left">
-                  <p className="text-[10px] opacity-80">Get it on</p>
+                  <p className="text-[10px] opacity-80">Download di</p>
                   <p className="text-sm font-semibold -mt-0.5">Google Play</p>
                 </div>
               </Button>
-            </div>
+            </a>
 
             {/* QR Code */}
             <div className="hidden md:flex flex-col items-center">

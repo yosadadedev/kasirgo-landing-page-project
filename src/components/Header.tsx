@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.yl.kasirgo";
+
 const navLinks = [
   { href: "#", label: "Home" },
   { href: "#fitur", label: "Fitur" },
@@ -67,9 +69,11 @@ export const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:block">
-            <Button className="rounded-full px-6 gradient-primary text-primary-foreground shadow-soft hover:opacity-90 transition-opacity">
-              Download App
-            </Button>
+            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer">
+              <Button className="rounded-full px-6 gradient-primary text-primary-foreground shadow-soft hover:opacity-90 transition-opacity">
+                Download App
+              </Button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,9 +102,11 @@ export const Header = () => {
                 {link.label}
               </button>
             ))}
-            <Button className="mt-4 rounded-full gradient-primary text-primary-foreground">
-              Download App
-            </Button>
+            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer">
+              <Button className="mt-4 w-full rounded-full gradient-primary text-primary-foreground">
+                Download App
+              </Button>
+            </a>
           </div>
         </div>
       </div>
