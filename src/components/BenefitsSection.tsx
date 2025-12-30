@@ -1,26 +1,26 @@
-import { MessageSquare, Package, Smartphone } from "lucide-react";
+import { WifiOff, Feather, ShieldCheck } from "lucide-react";
 
 const benefits = [
   {
-    icon: MessageSquare,
-    title: "Transaksi Cepat & Mudah",
+    icon: WifiOff,
+    title: "Offline-First (Tanpa Internet)",
     description:
-      "Proses penjualan dalam hitungan detik dengan antarmuka yang intuitif. Tidak perlu pelatihan khusus.",
-    highlight: "3 detik per transaksi",
+      "Data tersimpan aman di perangkat dengan database lokal (SQLite). Tidak perlu khawatir sinyal jelek atau server down. Aplikasi tetap bisa digunakan 100% lancar tanpa kuota.",
+    highlight: "100% Offline",
   },
   {
-    icon: Package,
-    title: "Kelola Stok Otomatis",
+    icon: Feather,
+    title: "Ringan & Cepat",
     description:
-      "Stok berkurang otomatis setiap transaksi. Dapatkan notifikasi saat stok hampir habis.",
-    highlight: "Peringatan stok rendah",
+      "Dibuat dengan teknologi terbaru, aplikasi ini tidak membebani kinerja smartphone entry-level sekalipun. Transaksi lancar tanpa lag.",
+    highlight: "Super Ringan",
   },
   {
-    icon: Smartphone,
-    title: "Akses Multi-Perangkat",
+    icon: ShieldCheck,
+    title: "Data Privacy Terjamin",
     description:
-      "Pantau bisnis Anda dari mana saja. Data tersinkronisasi antar perangkat secara realtime.",
-    highlight: "Sinkronisasi instan",
+      "Data bisnis adalah milik Anda sepenuhnya. Tidak dikirim ke server eksternal. Tersedia fitur Backup & Restore serta opsi Hapus Data Total.",
+    highlight: "Privasi Aman",
   },
 ];
 
@@ -31,7 +31,7 @@ export const BenefitsSection = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="inline-block px-4 py-2 bg-primary/10 text-primary text-sm font-semibold rounded-full mb-4">
-            ✨ Dipercaya Ribuan UMKM
+            ✨ Keunggulan Teknis
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-6">
             Mengapa Ribuan Pengusaha
@@ -39,7 +39,7 @@ export const BenefitsSection = () => {
             <span className="text-gradient">Memilih KasirGo?</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Karena KasirGo membuat pengelolaan bisnis jadi mudah dan efisien.
+            Solusi kasir yang dirancang khusus untuk kebutuhan UMKM Indonesia.
           </p>
         </div>
 
