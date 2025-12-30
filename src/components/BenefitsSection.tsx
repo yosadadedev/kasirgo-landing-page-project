@@ -1,4 +1,7 @@
 import { WifiOff, Feather, ShieldCheck } from "lucide-react";
+import mockupKasir from "@/assets/mockup-kasir.png";
+import mockupLaporan from "@/assets/mockup-laporan.png";
+import mockupPengaturan from "@/assets/mockup-pengaturan.png";
 
 const benefits = [
   {
@@ -7,6 +10,7 @@ const benefits = [
     description:
       "Data tersimpan aman di perangkat dengan database lokal (SQLite). Tidak perlu khawatir sinyal jelek atau server down. Aplikasi tetap bisa digunakan 100% lancar tanpa kuota.",
     highlight: "100% Offline",
+    mockup: mockupKasir,
   },
   {
     icon: Feather,
@@ -14,6 +18,7 @@ const benefits = [
     description:
       "Dibuat dengan teknologi terbaru, aplikasi ini tidak membebani kinerja smartphone entry-level sekalipun. Transaksi lancar tanpa lag.",
     highlight: "Super Ringan",
+    mockup: mockupLaporan,
   },
   {
     icon: ShieldCheck,
@@ -21,6 +26,7 @@ const benefits = [
     description:
       "Data bisnis adalah milik Anda sepenuhnya. Tidak dikirim ke server eksternal. Tersedia fitur Backup & Restore serta opsi Hapus Data Total.",
     highlight: "Privasi Aman",
+    mockup: mockupPengaturan,
   },
 ];
 
@@ -46,26 +52,19 @@ export const BenefitsSection = () => {
         {/* Benefits with Phone Mockups */}
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
           {benefits.map((benefit, index) => (
-            <div key={benefit.title} className="text-center">
+            <div key={benefit.title} className="text-center group">
               {/* Phone Mockup */}
               <div className="relative mb-8 flex justify-center">
                 <div className="relative">
                   {/* Glow effect */}
                   <div className="absolute inset-0 bg-primary/20 rounded-[2rem] blur-2xl scale-75 opacity-50" />
                   
-                  {/* Phone frame */}
-                  <div className="relative bg-foreground rounded-[2rem] p-2 shadow-elevated">
-                    <div className="bg-background rounded-[1.75rem] overflow-hidden w-[180px] aspect-[9/16]">
-                      <div className="h-full bg-gradient-to-b from-primary/5 to-background p-3 flex flex-col items-center justify-center">
-                        <div className={`w-14 h-14 rounded-2xl gradient-primary flex items-center justify-center mb-4 shadow-soft`}>
-                          <benefit.icon className="w-7 h-7 text-primary-foreground" />
-                        </div>
-                        <p className="text-xs font-bold text-foreground text-center">{benefit.highlight}</p>
-                      </div>
-                    </div>
-                    {/* Notch */}
-                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-4 bg-foreground rounded-full" />
-                  </div>
+                  {/* Real Screenshot */}
+                  <img 
+                    src={benefit.mockup} 
+                    alt={benefit.title}
+                    className="relative w-[180px] h-auto drop-shadow-2xl group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
               </div>
 

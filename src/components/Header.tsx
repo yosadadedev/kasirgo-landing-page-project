@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import kasirgoIcon from "@/assets/kasirgo-icon.png";
 
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.yl.kasirgo";
 
@@ -49,9 +50,10 @@ export const Header = () => {
           {/* Logo */}
           <a
             href="#"
-            className="text-2xl md:text-3xl font-black text-gradient tracking-tight"
+            className="flex items-center gap-2"
           >
-            KasirGo
+            <img src={kasirgoIcon} alt="KasirGo" className="w-8 h-8 md:w-10 md:h-10" />
+            <span className="text-2xl md:text-3xl font-black text-gradient tracking-tight">KasirGo</span>
           </a>
 
           {/* Desktop Navigation */}

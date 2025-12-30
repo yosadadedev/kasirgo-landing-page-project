@@ -1,5 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import mockupKasir from "@/assets/mockup-kasir.png";
+import mockupCheckout from "@/assets/mockup-checkout.png";
+import mockupLaporan from "@/assets/mockup-laporan.png";
 
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.yl.kasirgo";
 
@@ -51,17 +54,29 @@ export const HeroSection = () => {
         <div className="relative flex justify-center items-end gap-4 md:gap-8 animate-fade-up stagger-4">
           {/* Left Phone - tilted */}
           <div className="hidden md:block relative -mr-8 z-10 transform -rotate-6 translate-y-4">
-            <PhoneMockup variant="chat" />
+            <img 
+              src={mockupCheckout} 
+              alt="KasirGo Checkout" 
+              className="w-[200px] md:w-[260px] h-auto drop-shadow-2xl"
+            />
           </div>
           
           {/* Center Phone - main */}
           <div className="relative z-20 animate-float">
-            <PhoneMockup variant="main" />
+            <img 
+              src={mockupKasir} 
+              alt="KasirGo Kasir" 
+              className="w-[240px] md:w-[300px] h-auto drop-shadow-2xl"
+            />
           </div>
           
           {/* Right Phone - tilted */}
           <div className="hidden md:block relative -ml-8 z-10 transform rotate-6 translate-y-4">
-            <PhoneMockup variant="stats" />
+            <img 
+              src={mockupLaporan} 
+              alt="KasirGo Laporan" 
+              className="w-[200px] md:w-[260px] h-auto drop-shadow-2xl"
+            />
           </div>
         </div>
       </div>
@@ -69,119 +84,3 @@ export const HeroSection = () => {
   );
 };
 
-const PhoneMockup = ({ variant }: { variant: "main" | "chat" | "stats" }) => {
-  return (
-    <div className="relative">
-      {/* Phone frame */}
-      <div className="bg-foreground rounded-[2.5rem] p-2 shadow-elevated">
-        <div className="bg-background rounded-[2rem] overflow-hidden w-[200px] md:w-[260px] aspect-[9/19]">
-          {/* Phone screen content */}
-          <div className="h-full bg-gradient-to-b from-primary/5 to-background p-3 md:p-4">
-            {/* Status bar */}
-            <div className="flex justify-between items-center text-[10px] text-muted-foreground mb-3">
-              <span>9:41</span>
-              <div className="flex gap-0.5">
-                <div className="w-3 h-1.5 bg-foreground/30 rounded-sm" />
-                <div className="w-3 h-1.5 bg-foreground/30 rounded-sm" />
-                <div className="w-4 h-1.5 bg-primary rounded-sm" />
-              </div>
-            </div>
-
-            {variant === "main" && (
-              <>
-                {/* App header */}
-                <div className="text-center mb-4">
-                  <h3 className="text-base font-black text-gradient">KasirGo</h3>
-                  <p className="text-[10px] text-muted-foreground">Dashboard Utama</p>
-                </div>
-
-                {/* Stats cards */}
-                <div className="grid grid-cols-2 gap-2 mb-3">
-                  <div className="bg-card rounded-lg p-2 shadow-card">
-                    <p className="text-[9px] text-muted-foreground">Hari Ini</p>
-                    <p className="text-sm font-bold text-primary">Rp 2.5jt</p>
-                  </div>
-                  <div className="bg-card rounded-lg p-2 shadow-card">
-                    <p className="text-[9px] text-muted-foreground">Transaksi</p>
-                    <p className="text-sm font-bold text-foreground">48</p>
-                  </div>
-                </div>
-
-                {/* Recent transactions */}
-                <div className="bg-card rounded-lg p-2 shadow-card">
-                  <p className="text-[9px] font-semibold text-foreground mb-1.5">Transaksi Terakhir</p>
-                  {[
-                    { name: "Kopi Latte", price: "25.000" },
-                    { name: "Nasi Goreng", price: "30.000" },
-                    { name: "Es Teh Manis", price: "8.000" },
-                  ].map((item, i) => (
-                    <div key={i} className="flex justify-between items-center py-1.5 border-b border-border last:border-0">
-                      <span className="text-[9px] text-muted-foreground">{item.name}</span>
-                      <span className="text-[9px] font-semibold text-foreground">Rp {item.price}</span>
-                    </div>
-                  ))}
-                </div>
-              </>
-            )}
-
-            {variant === "chat" && (
-              <>
-                <div className="mb-3">
-                  <p className="text-[10px] font-bold text-foreground mb-2">Bantuan Kasir</p>
-                  <div className="bg-primary/10 rounded-lg p-2 mb-2">
-                    <p className="text-[9px] text-foreground">Bagaimana cara cetak struk?</p>
-                  </div>
-                  <div className="bg-card rounded-lg p-2 shadow-card">
-                    <p className="text-[9px] text-muted-foreground">Tap ikon printer di halaman transaksi untuk cetak struk Anda.</p>
-                  </div>
-                </div>
-                <div className="bg-card rounded-lg p-2 shadow-card">
-                  <p className="text-[9px] font-bold text-foreground mb-1">Dokter Terdekat</p>
-                  <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded-full bg-primary/20" />
-                    <div>
-                      <p className="text-[9px] text-foreground">Support 24/7</p>
-                      <p className="text-[8px] text-muted-foreground">Online</p>
-                    </div>
-                  </div>
-                </div>
-              </>
-            )}
-
-            {variant === "stats" && (
-              <>
-                <div className="mb-3">
-                  <p className="text-[10px] font-bold text-foreground mb-2">Statistik Penjualan</p>
-                </div>
-                <div className="bg-card rounded-lg p-2 shadow-card mb-2">
-                  <p className="text-[9px] text-muted-foreground">Total Minggu Ini</p>
-                  <p className="text-lg font-bold text-primary">Rp 15.2jt</p>
-                  <div className="flex items-center gap-1 mt-1">
-                    <span className="text-[8px] text-green-500">↑ 24%</span>
-                    <span className="text-[8px] text-muted-foreground">vs minggu lalu</span>
-                  </div>
-                </div>
-                <div className="bg-card rounded-lg p-2 shadow-card">
-                  <p className="text-[9px] font-bold text-foreground mb-1">Produk Terlaris</p>
-                  <div className="space-y-1">
-                    <div className="flex justify-between">
-                      <span className="text-[8px] text-muted-foreground">Kopi Susu</span>
-                      <span className="text-[8px] font-bold text-foreground">156</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-[8px] text-muted-foreground">Roti Bakar</span>
-                      <span className="text-[8px] font-bold text-foreground">98</span>
-                    </div>
-                  </div>
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-
-        {/* Notch */}
-        <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 md:w-20 h-5 bg-foreground rounded-full" />
-      </div>
-    </div>
-  );
-};
