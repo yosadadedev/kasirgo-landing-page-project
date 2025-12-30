@@ -7,29 +7,39 @@ import {
 
 const faqs = [
   {
-    question: "Apakah aplikasi ini berbayar?",
+    question: "Apakah aplikasi ini membutuhkan internet?",
     answer:
-      "KasirGo menyediakan versi gratis dengan fitur dasar yang sudah sangat lengkap untuk UMKM. Untuk fitur premium seperti multi-outlet dan laporan advanced, tersedia paket berlangganan dengan harga terjangkau.",
+      "Tidak, KasirGo dirancang dengan sistem offline-first. Anda dapat melakukan transaksi, mengelola produk, dan melihat laporan tanpa koneksi internet. Internet hanya dibutuhkan untuk update aplikasi.",
   },
   {
-    question: "Bisa dipakai tanpa internet?",
+    question: "Bagaimana cara backup data saya?",
     answer:
-      "Ya, tentu saja! KasirGo dirancang khusus untuk bekerja secara offline. Semua transaksi tersimpan di perangkat Anda dan akan otomatis tersinkronisasi ke cloud saat koneksi internet tersedia.",
+      "Data tersimpan secara lokal di perangkat. Namun, Anda dapat memanfaatkan fitur Ekspor Laporan (XLSX, CSV, PDF) untuk mencadangkan data transaksi. File hasil ekspor dapat disimpan ke layanan cloud seperti Google Drive atau dikelola menggunakan Microsoft Excel dan Google Sheets.",
   },
   {
-    question: "Printer apa saja yang didukung?",
+    question: "Apakah bisa menghubungkan printer thermal?",
     answer:
-      "KasirGo mendukung berbagai printer thermal bluetooth dengan lebar kertas 58mm dan 80mm. Kompatibel dengan merek populer seperti Epson, XPrinter, dan berbagai printer thermal lainnya yang tersedia di pasaran Indonesia.",
+      "Ya, KasirGo mendukung pencetakan struk menggunakan printer thermal Bluetooth (ukuran 58mm atau 80mm). Anda dapat menghubungkan printer melalui menu Pengaturan > Printer.",
   },
   {
-    question: "Bagaimana cara backup data?",
+    question: "Apakah data saya aman?",
     answer:
-      "Data Anda aman dengan fitur backup otomatis ke cloud. Anda juga bisa melakukan backup manual kapan saja ke penyimpanan lokal atau Google Drive untuk keamanan ekstra.",
+      "Data Anda tersimpan lokal di perangkat Anda dan tidak dikirim ke server eksternal kami, sehingga privasi data transaksi Anda terjamin penuh di tangan Anda.",
   },
   {
-    question: "Apakah bisa digunakan di banyak perangkat?",
+    question: "Apakah bisa digunakan di banyak perangkat (multi-device)?",
     answer:
-      "Ya, Anda bisa menggunakan KasirGo di beberapa perangkat sekaligus dengan satu akun. Data akan tersinkronisasi secara otomatis antar perangkat saat online.",
+      "Saat ini KasirGo didesain untuk penggunaan satu perangkat (single device). Data antar perangkat tidak saling terhubung (sinkronisasi) secara real-time.",
+  },
+  {
+    question: "Bagaimana cara menampilkan QRIS?",
+    answer:
+      "Anda dapat mengupload gambar QRIS toko Anda di menu Pengaturan > QRIS. Saat checkout dengan metode QRIS, kode QR tersebut akan ditampilkan ke pelanggan untuk discan.",
+  },
+  {
+    question: "Apakah perlu membuat akun atau login?",
+    answer:
+      "Tidak, KasirGo dapat langsung digunakan tanpa perlu pendaftaran atau login. Data tersimpan di perangkat Anda.",
   },
 ];
 
